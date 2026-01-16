@@ -1,0 +1,13 @@
+function[C]=weizhi(A)
+J=A(:,1);
+J1=J;
+flag=find(J>=180);
+J1(flag)=J(flag)-360;
+J=J1;
+W=A(:,2);
+h=A(:,3);
+r=h+1737;
+x=1000*r.*cos(2*pi*W/360).*cos(2*pi*J/360);
+y=1000*r.*cos(2*pi*W/360).*sin(2*pi*J/360);
+z=1000*r.*sin(2*pi*W/360);
+C=[x,y,z];
